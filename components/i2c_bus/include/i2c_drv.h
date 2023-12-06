@@ -28,7 +28,7 @@ typedef struct _I2cMessage {
     uint8_t          nbrOfRetries;      //< The slave address of the device on the I2C bus.
     I2cDirection     direction;         //< Direction of message
     I2cStatus        status;            //< i2c status
-    xQueueHandle     clientQueue;       //< Queue to send received messages to.
+    QueueHandle_t     clientQueue;       //< Queue to send received messages to.
     bool             isInternal16bit;   //< Is internal address 16 bit. If false 8 bit.
     uint16_t         internalAddress;   //< Internal address of device.
     uint8_t          *buffer;           //< Pointer to the buffer from where data will be read for transmission, or into which received data will be placed.
